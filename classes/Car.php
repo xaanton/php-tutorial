@@ -22,10 +22,10 @@ class Car implements Printable
     }
 
     public function print_details(){
-        echo $this->make_sentance();
+        echo $this->make_sentence();
     }
 
-    private function make_sentance(){
+    private function make_sentence(){
         return 'This car is ' . $this->year . ' ' .  $this->car_name . '<br>';
     }
 

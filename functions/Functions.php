@@ -33,3 +33,11 @@ function callback_test($step, $notify){
     }
 }
 
+function recursion_print_odd($array, $index){
+
+    if(sizeof($array) == $index)return;
+    if($array[$index] %2 != 0)echo $array[$index] . '<br>';
+    recursion_print_odd($array, $index+1);
+
+}
+

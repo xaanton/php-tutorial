@@ -21,10 +21,10 @@ class Ship implements Printable
 
     public function print_details()
     {
-        echo $this->make_sentance();
+        echo $this->make_sentence();
     }
 
-    private function make_sentance(){
+    private function make_sentence(){
         return 'This is ' . $this->size . ' metres big ship, following to ' . $this->direction;
     }
 }

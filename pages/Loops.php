@@ -6,6 +6,8 @@
  * Time: 12:23
  */
 
+include('../functions/Functions.php');
+
 $even_numbers = [2,4,6,8,10,12,14,16,18,20];
 
 echo "<h3>Foreach loop(print all)</h3><br>";
@@ -29,3 +31,7 @@ while($counter < sizeof($numbers)){
     $counter += 1;
 
 }
+
+echo "<h3>Recursion(only odd numbers)</h3><br>";
+
+recursion_print_odd($numbers, 0);
