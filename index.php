@@ -1,15 +1,22 @@
 <?php
+$GLOBALS['PAGES_DIRECTORY'] = './pages';
+$GLOBALS['FUNC_PATH'] = $_SERVER['DOCUMENT_ROOT'] . "/functions/Functions.php";
 
-// TODO: add the even_numbers array here
-$even_numbers = [2,4,6,8,10];
+include($GLOBALS['FUNC_PATH']);
 
-$male_names = ["Jake", "Eric", "John"];
-$female_names = ["Jessica", "Beth", "Sandra"];
+//echo '<script type="application/javascript">alert("Hello!")</script>';
 
-// TODO: join the male and female names to one array
-$names = array_merge($male_names, $female_names);
+echo("<h2>Content</h2><br>");
 
-print_r($even_numbers);
-print_r($names);
+$pages = array_diff(scandir($GLOBALS['PAGES_DIRECTORY']), array('.', '..'));
+array_filter($pages, function($value) { return $value !== '' && $value !== NULL; });
+$pages_reindexed = array_values($pages);
 
-?>
+//print_r($pages);
+//print_r($pages_reindexed);
+
+//$titles = ["Arrays", "Arrays_with_keys", "Strings"];
+
+for($i = 0; $i < sizeof($pages_reindexed); $i++){
+    makeLink($pages_reindexed[$i], $i+1);
+}
