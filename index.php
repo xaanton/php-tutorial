@@ -3,9 +3,9 @@ $GLOBALS['PAGES_DIRECTORY'] = './pages';
 $GLOBALS['FUNC_PATH'] = $_SERVER['DOCUMENT_ROOT'] . "/functions/Functions.php";
 
 include($GLOBALS['FUNC_PATH']);
+include("./functions/PrimeNumbers.php");
 
 //echo '<script type="application/javascript">alert("Hello!")</script>';
-
 echo("<h2>Content</h2><br>");
 
 $pages = array_diff(scandir($GLOBALS['PAGES_DIRECTORY']), array('.', '..'));
@@ -20,3 +20,5 @@ $pages_reindexed = array_values($pages);
 for($i = 0; $i < sizeof($pages_reindexed); $i++){
     makeLink($pages_reindexed[$i], $i+1);
 }
+
+print_r(find_prime_numbers(99961));
