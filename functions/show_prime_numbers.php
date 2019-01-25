@@ -6,9 +6,56 @@
  * Time: 12:41
  */
 
-require_once ('PrimeNumbers.php');
+function findPrimeNumbers()
+{
 
-//parse_str(implode('&', array_slice($argv, 1)), $_GET);
-//$limit = $_GET['limit'];
+    $i = 0;
+    while (true) {
 
-print_r(PrimeNumbers::findPrimeNumbers());
+        if (isPrimeNumber($i)) {
+            echo $i . PHP_EOL;
+        }
+        $i += 1;
+    }
+
+}
+
+// Check if $number is a prime number
+function isPrimeNumber($number)
+{
+
+    if ($number === 0 || $number === 1) {
+        return false;
+    }
+
+    if ($number == 2) {
+        return true;
+    }
+
+    if($number == 3){
+        return true;
+    }
+
+    if ($number % 2 == 0) {
+        return false;
+    }
+
+    if ($number % 3 == 0) {
+        return false;
+    }
+
+    $i = 5;
+    $w = 2;
+
+    while ($i * $i <= $number) {
+        if ($number % $i == 0) {
+            return false;
+        }
+
+        $i += $w;
+        $w = 6 - $w;
+    }
+    return true;
+}
+
+findPrimeNumbers();

@@ -29,16 +29,12 @@ class PrimeNumbers
     // Check if $number is a prime number
     public static function isPrimeNumber($number)
     {
-        if (!is_numeric($number)) {
-            return false;
-        }
 
         if ($number === 0 || $number === 1) {
             return false;
         }
-        $number_half = $number/2;
 
-        for ($i = 2; $i <= $number_half; $i++) {
+        for ($i = 2; $i * $i <= number; $i++) {
             if ($number % $i == 0) {
                 return false;
             }
