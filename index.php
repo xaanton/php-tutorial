@@ -22,3 +22,5 @@ for($i = 0; $i < sizeof($pages_reindexed); $i++){
 }
 
 print_r(PrimeNumbers::findPrimeNumbers(99961));
+
+print_r(PrimeNumbers::findPrimeNumbers("asadasd"));

@@ -12,6 +12,10 @@ class PrimeNumbers
     // Return array of all prime numbers < limit
     public static function findPrimeNumbers($limit)
     {
+        if (!is_numeric($limit)) {
+            throw new Exception("Limit value must be numeric");
+        }
+
         $result = array();
 
         for ($i = 0; $i <= $limit; $i++ ) {
@@ -26,6 +30,10 @@ class PrimeNumbers
     // Check if $number is a prime number
     public static function isPrimeNumber($number)
     {
+        if (!is_numeric($number)) {
+            return false;
+        }
+
         if ($number === 0 || $number === 1) {
             return false;
         }
