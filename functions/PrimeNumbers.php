@@ -9,7 +9,7 @@
 
 class PrimeNumbers
 {
-    // Return array of all prime numbers < limit
+    // Print prime numbers
     public static function findPrimeNumbers()
     {
 
