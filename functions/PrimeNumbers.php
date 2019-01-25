@@ -39,7 +39,7 @@ class PrimeNumbers
         }
         $number_half = $number/2;
 
-        for ($i = 2; $i < $number_half; $i++) {
+        for ($i = 2; $i <= $number_half; $i++) {
             if ($number % $i == 0) {
                 return false;
             }
