@@ -21,4 +21,4 @@ for($i = 0; $i < sizeof($pages_reindexed); $i++){
     makeLink($pages_reindexed[$i], $i+1);
 }
 
-print_r(PrimeNumbers::find_prime_numbers(99961));
+print_r(PrimeNumbers::findPrimeNumbers(99961));

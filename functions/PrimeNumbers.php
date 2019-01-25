@@ -9,13 +9,13 @@
 
 class PrimeNumbers
 {
-
-    public static function find_prime_numbers($limit)
+    // Return array of all prime numbers < limit
+    public static function findPrimeNumbers($limit)
     {
         $result = array();
 
         for ($i = 0; $i <= $limit; $i++ ) {
-            if (PrimeNumbers::is_prime_number($i)) {
+            if (PrimeNumbers::isPrimeNumber($i)) {
                 array_push($result, $i);
             }
         }
@@ -23,7 +23,8 @@ class PrimeNumbers
         return $result;
     }
 
-    public static function is_prime_number($number)
+    // Check if $number is a prime number
+    public static function isPrimeNumber($number)
     {
         if ($number === 0 || $number === 1) {
             return false;
