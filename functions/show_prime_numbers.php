@@ -10,6 +10,6 @@ include_once('PrimeNumbers.php');
 
 parse_str(implode('&', array_slice($argv, 1)), $_GET);
 
-$limit = $_GET['limit'];
+//$limit = $_GET['limit'];
 
-print_r(PrimeNumbers::findPrimeNumbers($limit));
+print_r(PrimeNumbers::findPrimeNumbers());

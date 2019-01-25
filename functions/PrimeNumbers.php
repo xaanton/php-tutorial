@@ -10,18 +10,17 @@
 class PrimeNumbers
 {
     // Return array of all prime numbers < limit
-    public static function findPrimeNumbers($limit)
+    public static function findPrimeNumbers()
     {
-        if (!is_numeric($limit)) {
-            throw new Exception("Limit value must be numeric");
-        }
 
         $result = array();
+        $i = 0;
+        while (true) {
 
-        for ($i = 0; $i <= $limit; $i++ ) {
             if (PrimeNumbers::isPrimeNumber($i)) {
-                array_push($result, $i);
+                echo $i . PHP_EOL;
             }
+            $i += 1;
         }
 
         return $result;
