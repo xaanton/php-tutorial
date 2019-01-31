@@ -5,25 +5,11 @@
  * Date: 2019-01-31
  * Time: 10:12
  */
-
-$array = array(
-    array(1, 2, 3),
-    array(4, 5, 6),
-    array(7, 8, 9)
-);
-
 $command_abbs = str_split($argv[1]);
 
 $matrix = new Matrix();
 
-$command = new Command("l");
-
-$matrix->rotate($command);
-$matrix->rotate($command);
-$matrix->rotate($command);
-
-
-foreach($command_abbs as $command_abb)
+foreach ($command_abbs as $command_abb)
 {
     $matrix->rotate(new Command($command_abb));
 }
@@ -43,20 +29,20 @@ Class Matrix
     }
 
     public function rotate(Command $command) {
-        if($command->isHorizontal()) {
+        if ($command->isHorizontal()) {
             $this->rotate_horizontal($command);
         } else {
             $this->rotate_vertical($command);
         }
     }
 
-    private function rotate_horizontal(Command $command) {
+    private function rotate_horizontal (Command $command) {
         $temp_array = $this->array;
-        if($command->isReverse()){
+        if ($command->isReverse()) {
             $this->array[$command->getIndex()][0] =
                 $temp_array[$command->getIndex()][count($temp_array[$command->getIndex()])-1];
 
-            for($i = 1; $i < count($temp_array[$command->getIndex()]); $i++) {
+            for ($i = 1; $i < count($temp_array[$command->getIndex()]); $i++) {
                 $this->array[$command->getIndex()][$i] =
                     $temp_array[$command->getIndex()][$i-1];
             }
@@ -64,20 +50,20 @@ Class Matrix
             $this->array[$command->getIndex()][count($temp_array[$command->getIndex()])-1] =
                 $temp_array[$command->getIndex()][0];
 
-            for($i = count($temp_array[$command->getIndex()])-2; $i >= 0; $i--) {
+            for ($i = count($temp_array[$command->getIndex()])-2; $i >= 0; $i--) {
                 $this->array[$command->getIndex()][$i] =
                     $temp_array[$command->getIndex()][$i+1];
             }
         }
     }
 
-    private function rotate_vertical(Command $command) {
+    private function rotate_vertical (Command $command) {
         $temp_array = $this->array;
-        if($command->isReverse()){
+        if ($command->isReverse()) {
             $this->array[0][$command->getIndex()] =
                 $temp_array[count($temp_array)-1][$command->getIndex()];
 
-            for($i = 1; $i < count($temp_array); $i++) {
+            for ($i = 1; $i < count($temp_array); $i++) {
                 $this->array[$i][$command->getIndex()] =
                     $temp_array[$i-1][$command->getIndex()];
             }
@@ -85,16 +71,16 @@ Class Matrix
             $this->array[count($temp_array)-1][$command->getIndex()] =
                 $temp_array[0][$command->getIndex()];
 
-            for($i = count($temp_array)-2; $i >= 0; $i--) {
+            for ($i = count($temp_array)-2; $i >= 0; $i--) {
                 $this->array[$i][$command->getIndex()] =
                     $temp_array[$i+1][$command->getIndex()];
             }
         }
     }
 
-    public function printMatrix(){
-        foreach ($this->array as $ar){
-            foreach ($ar as $val){
+    public function printMatrix() {
+        foreach ($this->array as $ar) {
+            foreach ($ar as $val) {
                 echo $val;
             }
             echo PHP_EOL;
