@@ -33,8 +33,9 @@ class PrimeNumbers
         if ($number === 0 || $number === 1) {
             return false;
         }
+        $number_half = $number/2;
 
-        for ($i = 2; $i * $i <= number; $i++) {
+        for ($i = 2; $i * $i <= $number_half; $i++) {
             if ($number % $i == 0) {
                 return false;
             }
