@@ -32,7 +32,7 @@ function isPrimeNumber($number)
         return true;
     }
 
-    if($number == 3){
+    if ($number == 3) {
         return true;
     }
 
